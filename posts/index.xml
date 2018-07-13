@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>http://94192448.github.io/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <title>Posts on 蜀郡·又一城 - 业主交流平台</title>
+    <link>http://shujun.food028.com/posts/</link>
+    <description>Recent content in Posts on 蜀郡·又一城 - 业主交流平台</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     
-	<atom:link href="http://94192448.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shujun.food028.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://94192448.github.io/posts/readme/</link>
+      <link>http://shujun.food028.com/posts/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://94192448.github.io/posts/readme/</guid>
-      <description> 
-主要功能  业主在线投票;  业委会发布投票信息; 短信群发，提醒未投票业主参与 业委会维护业主信息-真实业主信息来源业委会：姓名，房号，手机号码;  接口设计    Method Path Description authenticated Available from UI     GET proprietor      GET vote/{id} Get specified vote x    GET voting/{voteId} Get the vote subsidiary ×    POST voting proprietorId,voteId     POST support proprietorId,votingId      代码结构 shujun/ app/ main.go  </description>
+      <guid>http://shujun.food028.com/posts/readme/</guid>
+      <description>主要功能 业主在线投票; 业委会发布投票信息; 短信群发，提醒未投票业主参与 业委会维护业主信息-真实业主信息来源业委会：姓名，房号，手机号码; 接口</description>
     </item>
     
   </channel>
