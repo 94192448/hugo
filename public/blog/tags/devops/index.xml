@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on Yangzhiqiang Blog</title>
+    <link>http://blog.food028.com/tags/devops/</link>
+    <description>Recent content in DevOps on Yangzhiqiang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jul 2018 11:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.food028.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>docker镜像私服之harbor</title>
+      <link>http://blog.food028.com/2018/07/19/how-to-use-harbor/</link>
+      <pubDate>Thu, 19 Jul 2018 11:00:00 +0000</pubDate>
+      
+      <guid>http://blog.food028.com/2018/07/19/how-to-use-harbor/</guid>
+      <description>harbor 安装与使用 离线安装 下载地址 修改配置 vi harbor.cfg hostname = ? (可选)更改默认端口 vi docker-compose proxy.ports=1180:80 vi common/templates/registry/config.yml auth.token.realm=$public_url:1180/service/token 修改存储地址 vi docker-compose.yml registry.volumes=/path 启停操作 初始化配置启动 sh install.sh 容器清理数据保留 docker-compose</description>
+    </item>
+    
+    <item>
+      <title>gitlab-ci-cd搭建持续集成环境</title>
+      <link>http://blog.food028.com/2018/07/19/how-to-use-gitlabci/</link>
+      <pubDate>Thu, 19 Jul 2018 11:00:00 +0000</pubDate>
+      
+      <guid>http://blog.food028.com/2018/07/19/how-to-use-gitlabci/</guid>
+      <description>gitlab配置Devops runner配置 executo默认使用shell本地构建,runner详细配置 runner执行过程中遇到dock</description>
+    </item>
+    
+  </channel>
+</rss>
