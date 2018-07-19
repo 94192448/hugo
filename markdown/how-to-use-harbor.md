@@ -1,43 +1,43 @@
-#harbor °²×°ÓëÊ¹ÓÃ
-### ÀëÏß°²×°
-- **[ÏÂÔØµØÖ·](https://storage.googleapis.com/harbor-releases/release-1.5.0/harbor-offline-installer-v1.5.1.tgz)**
+# harbor å®‰è£…ä¸ä½¿ç”¨
+### ç¦»çº¿å®‰è£…
+- **[ä¸‹è½½åœ°å€](https://storage.googleapis.com/harbor-releases/release-1.5.0/harbor-offline-installer-v1.5.1.tgz)**
 
-### ĞŞ¸ÄÅäÖÃ
+### ä¿®æ”¹é…ç½®
 - vi harbor.cfg hostname = ?
-- (¿ÉÑ¡)¸ü¸ÄÄ¬ÈÏ¶Ë¿Ú
+- (å¯é€‰)æ›´æ”¹é»˜è®¤ç«¯å£
 	1. vi docker-compose proxy.ports=1180:80
 	2. vi common/templates/registry/config.yml auth.token.realm=$public_url:1180/service/token
-- ĞŞ¸Ä´æ´¢µØÖ·
+- ä¿®æ”¹å­˜å‚¨åœ°å€
 ```
 vi docker-compose.yml   registry.volumes=/path
 ```
 	
-### ÆôÍ£²Ù×÷
-- ³õÊ¼»¯ÅäÖÃÆô¶¯ sh install.sh
-- ÈİÆ÷ÇåÀíÊı¾İ±£Áô
+### å¯åœæ“ä½œ
+- åˆå§‹åŒ–é…ç½®å¯åŠ¨ sh install.sh
+- å®¹å™¨æ¸…ç†æ•°æ®ä¿ç•™
 ```
 docker-compose down -v
 ```
-- Êı¾İÇåÀí
+- æ•°æ®æ¸…ç†
 ```sh
 $ rm -r /data/database
 $ rm -r /data/registry
 ```
 
-### dockerÊ¹ÓÃË½·ş
-- ĞŞ¸ÄÅäÖÃ 
+### dockerä½¿ç”¨ç§æœ
+- ä¿®æ”¹é…ç½® 
 ```
 vi /etc/docker/daemon.json  #"insecure-registries" : ["192.168.251.157:1180"]
 ```
-- ÖØÆôdocker
+- é‡å¯docker
 ```
 systemctl restart docker
 ```
-- µÇÂ¼docker
+- ç™»å½•docker
 ```
 docker login -u admin -p Harbor12345 192.168.251.157:1180
 ```
-- push¾µÏñµ½harborË½·ş
+- pushé•œåƒåˆ°harborç§æœ
 ```
 docker tag SOURCE_IMAGE[:TAG] 192.168.251.157:1180/yusp/IMAGE[:TAG]
 docker push 192.168.251.157:1180/yusp/IMAGE[:TAG]
