@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.food028.com/2018/07/19/how-to-use-harbor/</loc>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.food028.com/2018/07/19/how-to-use-gitlabci/</loc>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.food028.com/2018/07/18/hello/</loc>
     <lastmod>2018-02-18T11:00:00+00:00</lastmod>
   </url>
@@ -17,8 +27,14 @@
   </url>
   
   <url>
+    <loc>http://blog.food028.com/tags/devops/</loc>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.food028.com/post/</loc>
-    <lastmod>2018-02-18T11:00:00+00:00</lastmod>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -29,6 +45,19 @@
   
   <url>
     <loc>http://blog.food028.com/tags/</loc>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.food028.com/tags/tech/</loc>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.food028.com/categories/tech/</loc>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,7 +81,7 @@
   
   <url>
     <loc>http://blog.food028.com/</loc>
-    <lastmod>2018-02-18T11:00:00+00:00</lastmod>
+    <lastmod>2018-07-19T11:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

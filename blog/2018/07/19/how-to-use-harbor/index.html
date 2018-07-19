@@ -8,14 +8,14 @@
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <meta name="description" content="杨志强，程序员, 开源爱好者，户外摄影爱好者 | 这里是 杨志强 的博客，与你一起发现更大的世界。">
+    <meta name="description" content="Harbor is the compliance platform for tokenizing private securities such as real estate, company equity, investment funds, fine art, etc.">
     
     <meta name="keyword"  content="杨志强, Yangzhiqiang , 杨志强的网络日志, 杨志强的博客, Yangzhiqiang Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
     <link rel="shortcut icon" href="http://blog.food028.com/img/favicon.ico">
 
-    <title>404 Page not found-杨志强的博客 | Yangzhiqiang Blog</title>
+    <title>docker镜像私服之harbor-杨志强的博客 | Yangzhiqiang Blog</title>
 
-    <link rel="canonical" href="http://blog.food028.com">
+    <link rel="canonical" href="http://blog.food028.com/2018/07/19/how-to-use-harbor/">
 
     <link rel="stylesheet" href="http://blog.food028.com/css/iDisqus.min.css"/>
 	
@@ -112,14 +112,33 @@
 
 
 
-<header class="intro-header" style="background-image: url('http://blog.food028.com/img/home-bg-jeep.jpg')">
+
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://blog.food028.com/img/post-bg-baihaba.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Yangzhiqiang Blog </h1>
-                    
-		    <span class="subheading">路在脚下，心向远方</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                       
+                       <a class="tag" href="/tags/tech" title="tech">
+                           tech
+                        </a>
+                        
+                       <a class="tag" href="/tags/devops" title="devOps">
+                           devOps
+                        </a>
+                        
+                    </div>
+                    <h1>docker镜像私服之harbor</h1>
+                    <h2 class="subheading"></h2>
+                    <span  class="meta">Posted by 杨志强 on Thursday, July 19, 2018
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -129,22 +148,153 @@
 
 
 
-<header class="intro-header" style="background-image: url('http://blog.food028.com/img/404-bg.jpg')">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<div class="site-heading" id="tag-heading">
-					<h1>404</h1>
-					<span class="subheading">你来到了没有知识的荒原 :(</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
+<article>
+    <div class="container">
+        <div class="row">
 
-<script>
-	document.body.classList.add('page-fullscreen');
-</script>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+		
+                <header>
+                <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#harbor-安装与使用">harbor 安装与使用</a>
+<ul>
+<li>
+<ul>
+<li><a href="#离线安装">离线安装</a></li>
+<li><a href="#修改配置">修改配置</a></li>
+<li><a href="#启停操作">启停操作</a></li>
+<li><a href="#docker使用私服">docker使用私服</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+		
+		
+
+<h1 id="harbor-安装与使用">harbor 安装与使用</h1>
+
+<h3 id="离线安装">离线安装</h3>
+
+<ul>
+<li><strong><a href="https://storage.googleapis.com/harbor-releases/release-1.5.0/harbor-offline-installer-v1.5.1.tgz">下载地址</a></strong></li>
+</ul>
+
+<h3 id="修改配置">修改配置</h3>
+
+<ul>
+<li>vi harbor.cfg hostname = ?</li>
+<li>(可选)更改默认端口
+
+<ol>
+<li>vi docker-compose proxy.ports=1180:80</li>
+<li>vi common/templates/registry/config.yml auth.token.realm=$public_url:1180/service/token</li>
+</ol></li>
+<li>修改存储地址
+<code>
+vi docker-compose.yml   registry.volumes=/path
+</code></li>
+</ul>
+
+<h3 id="启停操作">启停操作</h3>
+
+<ul>
+<li>初始化配置启动 sh install.sh</li>
+<li>容器清理数据保留
+<code>
+docker-compose down -v
+</code></li>
+<li>数据清理
+<code>sh
+$ rm -r /data/database
+$ rm -r /data/registry
+</code></li>
+</ul>
+
+<h3 id="docker使用私服">docker使用私服</h3>
+
+<ul>
+<li>修改配置
+<code>
+vi /etc/docker/daemon.json  #&quot;insecure-registries&quot; : [&quot;192.168.251.157:1180&quot;]
+</code></li>
+<li>重启docker
+<code>
+systemctl restart docker
+</code></li>
+<li>登录docker
+<code>
+docker login -u admin -p Harbor12345 192.168.251.157:1180
+</code></li>
+<li>push镜像到harbor私服
+<code>
+docker tag SOURCE_IMAGE[:TAG] 192.168.251.157:1180/yusp/IMAGE[:TAG]
+docker push 192.168.251.157:1180/yusp/IMAGE[:TAG]
+</code></li>
+</ul>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/07/19/how-to-use-gitlabCI/" data-toggle="tooltip" data-placement="top" title="gitlab-ci-cd搭建持续集成环境">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                     
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    </div>
+                </section>
+
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a target="_blank" href="http://food028.com">food028</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
 
 
 
@@ -220,7 +370,7 @@
 		    
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Yangzhiqiang Blog , 0001
+                    Copyright &copy; Yangzhiqiang Blog , 2018
                     <br>
                     Markdown by Yangzhiqiang
                 </p>

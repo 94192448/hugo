@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Yangzhiqiang Blog</title>
-    <link>http://blog.food028.com/post/</link>
-    <description>Recent content in Posts on Yangzhiqiang Blog</description>
+    <title>Tech on Yangzhiqiang Blog</title>
+    <link>http://blog.food028.com/categories/tech/</link>
+    <description>Recent content in Tech on Yangzhiqiang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Jul 2018 11:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.food028.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.food028.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,15 +27,6 @@
       
       <guid>http://blog.food028.com/2018/07/19/how-to-use-gitlabci/</guid>
       <description>gitlab配置Devops runner配置 executo默认使用shell本地构建,runner详细配置 runner执行过程中遇到dock</description>
-    </item>
-    
-    <item>
-      <title>Welcome to Yangzhiqiang Blog</title>
-      <link>http://blog.food028.com/2018/07/18/hello/</link>
-      <pubDate>Sun, 18 Feb 2018 11:00:00 +0000</pubDate>
-      
-      <guid>http://blog.food028.com/2018/07/18/hello/</guid>
-      <description> Hello World! </description>
     </item>
     
   </channel>
